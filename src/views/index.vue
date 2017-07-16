@@ -107,7 +107,7 @@ export default {
       BUS.$emit('showAlbum');
       setTimeout(()=>{
         this.showText = !this.showText;
-      }, 1500);
+      }, 2000);
     }
   },
 }

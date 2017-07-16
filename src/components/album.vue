@@ -12,7 +12,7 @@
   font-size: 16px;
   text-align: center;
   font-weight: 600;
-  animation: showImg 3s;
+  animation: showImg 3.6s;
 }
 
 @media screen and (min-width:800px) {
@@ -38,7 +38,7 @@
     display: inline-block;
     background-color: #000;
     opacity: 0.9;
-    animation: showImg 1.6s;
+    animation: showImg 2.4s;
     box-shadow: 0 20px 20px -10px rgba(0, 0, 0, 0.19);
   }
   .album-img {
@@ -71,7 +71,7 @@
     width: 26vw;
     height: 26vw;
     cursor: pointer;
-    animation: showImg 1.6s;
+    animation: showImg 2.4s;
     box-shadow: 0 20px 20px -10px rgba(0, 0, 0, 0.19);
     /*display: block;*/
   }

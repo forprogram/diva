@@ -71,17 +71,17 @@ margin-bottom: 40px;
     <div class="photo-boxes">
       <div class="box">
         <a v-for="(item, index) in photoData.left" @click="toIndex('left', index)">
-          <img class="photos" v-lazy="photoData.url + routeName + '/' + item.name + '.jpg'">
+          <img class="photos" v-lazy="'http://ot2ie5s0n.bkt.clouddn.com/' + item.name + '.jpg'">
         </a>
       </div>
       <div class="box">
         <a v-for="(item, index) in photoData.center" @click="toIndex('center', index)">
-          <img class="photos" v-lazy="photoData.url + routeName + '/' + item.name + '.jpg'">
+          <img class="photos" v-lazy="'http://ot2ie5s0n.bkt.clouddn.com/' + item.name + '.jpg'">
         </a>
       </div>
       <div class="box">
         <a v-for="(item, index) in photoData.right" @click="toIndex('right', index)">
-          <img class="photos" v-lazy="photoData.url + routeName + '/' +  item.name + '.jpg'">
+          <img class="photos" v-lazy="'http://ot2ie5s0n.bkt.clouddn.com/' + item.name + '.jpg'">
         </a>
       </div>
     </div>
@@ -110,7 +110,7 @@ export default {
       BUS.$emit('showAlbum');
       setTimeout(() => {
         BUS.$emit('routeChange', true);
-        this.$router.push({name: 'photoindex', params: {name: this.routeName, position: position, n: index}});
+        this.$router.push({name: 'photoindex', params: {name: this.routeName, position: position,n: index}});
         BUS.$emit('showAlbum');
       }, 1000);    
     },

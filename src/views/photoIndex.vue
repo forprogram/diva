@@ -82,16 +82,16 @@
 <template>
   <div class="photoIndex">
     <h2>{{$route.params.name}}</h2>
-    <div class="description">
+    <div class="description" v-if="photoData.hasOwnProperty('description')">
       <p>{{photoData.description.name}}:</p>
       <p>{{photoData.description.value}}</p>
     </div>
-    <div class="video-wrap">
+    <div class="video-wrap" v-if="photoData.hasOwnProperty('video')">
         <video-player  ref="videoPlayer" 
             :options="playerOptions">
         </video-player>
     </div>
-    <img v-for="n in photoData.length" v-lazy="'http://oqwhnnwix.bkt.clouddn.com/' + photoData.name + '/' + n + '.jpg'">
+    <img v-for="n in photoData.length" v-lazy="'http://ot2ie5s0n.bkt.clouddn.com/' + photoData.name + '/' + n + '.jpg'">
   </div>
 </template>
 
