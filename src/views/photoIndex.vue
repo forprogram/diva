@@ -91,7 +91,8 @@
             :options="playerOptions">
         </video-player>
     </div>
-    <img v-for="n in photoData.length" v-lazy="'http://ot2ie5s0n.bkt.clouddn.com/' + photoData.name + '/' + n + '.jpg'">
+    <img v-for="n in photoData.length" 
+      v-lazy="'http://ot2ie5s0n.bkt.clouddn.com/' + photoData.name + '/' + n + '.' + indexImgType">
   </div>
 </template>
 
@@ -102,33 +103,38 @@ export default {
   components: {
     videoPlayer
   },
-  data() {
-    return {
-      playerOptions: {
-
-        // component options
-        start: 0,
-        playsinline: false,
-
-        // videojs options
-        muted: true,
-        language: 'en',
-        playbackRates: [0.7, 1.0, 1.5, 2.0],
-        sources: [{
-          type: "video/mp4",
-          src: "http://oqwhnnwix.bkt.clouddn.com/left/2/2.mp4"
-        }],
-        poster: "http://covteam.u.qiniudn.com/poster.png",
-      }
-    }
-  },
-  created() {
-  },
+  // data() {
+  //   return {
+  //     playerOptions: {
+  //       start: 0,
+  //       playsinline: false,
+  //       muted: true,
+  //       language: 'en',
+  //       playbackRates: [0.7, 1.0, 1.5, 2.0],
+  //       sources: [{
+  //         type: "video/mp4",
+  //         src: this.photoData.video
+  //       }],
+  //       poster: this.photoData.videoCover,
+  //     }
+  //   }
+  // },
   computed: {
     photoData() {
       let routeParams = this.$route.params;
       return photos[routeParams.name][routeParams.position][routeParams.n];
     },
+    playerOptions() {
+      let sources = [{type: "video/mp4", src: this.photoData.video}];
+      let poster = this.photoData.videoCover;
+      return {
+        sources,
+        poster
+      }
+    },
+    indexImgType() {
+      return this.photoData.indexImgType ? this.photoData.indexImgType : 'jpg'
+    }
   }
 }
 </script>

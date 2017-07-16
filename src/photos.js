@@ -204,6 +204,7 @@ export default {
       {
         name: 'PRA',
         length: 8,
+        indexImgType: 'png',
         video: 'http://ot2ie5s0n.bkt.clouddn.com/PMA.mp4',
         videoCover: 'http://ot2ie5s0n.bkt.clouddn.com/PRA/3.png',
         description: {
